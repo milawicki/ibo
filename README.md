@@ -1,6 +1,6 @@
 # IBO - Initial Bottle Offering
 
-*insert screenshot here*
+![Screenshot](https://user-images.githubusercontent.com/30719996/151841404-0f9838ec-762b-4512-ab18-859d41a7ef44.png)
 
 
 IBO allows alcohol producers (wineries, distilleries etc) to tokenize their future production. It can be use as alternative way to rise funds, emit limited batch of bottles etc.
@@ -9,8 +9,8 @@ Tokens should be offer below shop price of bottles, so the discount becomes valu
 
 This variant of IBO supports only one token at a time. Feel free to check other variants of this dApp:
 
-* IBO Manager - handles multiple tokens
-* IBO Auction - NFT version of this contract with auctioning mechanism
+* [IBO Manager](https://github.com/milawicki/ibo-manager) - handles multiple tokens
+* [IBO Auction](https://github.com/milawicki/ibo-nft-auction) - NFT version of this contract with auctioning mechanism
 
 ## Disclaimer
 
@@ -27,7 +27,7 @@ Following code is NOT production ready. It may contain bugs and be not gas effic
 1. Clone the repository
 
 ```
-git clone X
+git clone https://github.com/milawicki/ibo
 ```
 
 2. Install Truffle
