@@ -59,7 +59,7 @@
       this.loadData();
       this.$store.dispatch('BottlesStore/init');
 
-      Web3.givenProvider.on('accountsChanged', () => {
+      Web3.givenProvider?.on('accountsChanged', () => {
         this.loadData();
       });
     }
