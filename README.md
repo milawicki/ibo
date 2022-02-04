@@ -91,5 +91,8 @@ When you'll open the app and login with your wallet you'll be able to buy tokens
 
 If you login to the app with wallet address of the contract owner you will have option to withdraw ETH funds from the contract as well as modify token (bottle) details.
 
+
+[Click here to open the app](https://milawicki.github.io/ibo/index.html). Be sure you're connected to Rinkeby Test Network.
+
 ## Author
 Mike Lawicki http://lawicki.pl
