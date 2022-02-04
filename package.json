@@ -4,6 +4,8 @@
   "description": "",
   "scripts": {},
   "dependencies": {
-    "@openzeppelin/contracts": "^4.4.1"
+    "@openzeppelin/contracts": "^4.4.1",
+    "@truffle/hdwallet-provider": "^2.0.3",
+    "dotenv": "^16.0.0"
   }
 }
