@@ -1,5 +1,6 @@
 import Web3 from 'web3';
 import { Contract, ContractSendMethod } from 'web3-eth-contract';
+import { AbiItem } from 'web3-utils';
 import { EthService, UserService } from '.';
 import { Address, Bottle, BuyBottles, TokenBalance, UpdateBottle } from '@/interfaces';
 import contractMetadata from '../../../build/contracts/Ibo.json';
@@ -11,6 +12,8 @@ export enum BottlesServiceEvents {
   Withdraw = 'Withdraw'
 }
 
+type Network = Record<string, any>;
+
 class BottlesService extends EthService {
   private contract?: Contract;
 
@@ -21,7 +24,7 @@ class BottlesService extends EthService {
 
     const eth = this.getEthClient();
     const networkId = await eth?.net.getId();
-    const contractAddressInCurrentNetwork = networkId && contractMetadata?.networks[networkId]?.address;
+    const contractAddressInCurrentNetwork = networkId && (contractMetadata?.networks as unknown as Network[])[networkId]?.address;
   
     const from = await UserService.getCurrentUser() || undefined;
   
@@ -29,7 +32,7 @@ class BottlesService extends EthService {
       return null;
     }
 
-    this.contract = new eth.Contract(contractMetadata.abi, contractAddressInCurrentNetwork, { from });
+    this.contract = new eth.Contract(contractMetadata.abi as AbiItem[], contractAddressInCurrentNetwork, { from });
 
     eth.givenProvider.on('accountsChanged', (accounts: Address[]) => {
       this.contract!.options.from = accounts[0];
